@@ -1,0 +1,20 @@
+getgenv().chat_message = function(msg,times)
+if not times then times = 1 end
+for count = 1,times do
+task.wait()
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild('Chat') then
+	local chat = game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
+	chat.Text = tostring(msg)
+	chat:CaptureFocus()
+	keypress(Enum.KeyCode.Return)
+	keyrelease(Enum.KeyCode.Return)
+    else
+	local chat = game.CoreGui.ExperienceChat.appLayout.chatInputBar.Background.Container.TextContainer.TextBoxContainer.TextBox
+	chat.Text = tostring(msg)
+	chat:CaptureFocus()
+	keypress(Enum.KeyCode.Return)
+	keyrelease(Enum.KeyCode.Return)
+end
+end
+end
+getgenv().loadedchatmodule = true
